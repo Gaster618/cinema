@@ -27,9 +27,9 @@ class CinemaParser:
         all_films = parsed_main_page.find_all("div", class_='movie-plate')
         for film in all_films:
             self.films.append(film["attr-title"])
-        print(self.films)
+        return self.films
 
 MSK_PARSER = CinemaParser()
 MSK_PARSER.extract_raw_content()
 #MSK_PARSER.print_raw_content()
-MSK_PARSER.get_films_list()
+print(MSK_PARSER.get_films_list())
